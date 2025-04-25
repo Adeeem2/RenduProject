@@ -1,0 +1,40 @@
+# Lab Assignment: Fibonacci Sequence Implementation and Visualization
+
+## Course Information
+- **Course**: Introduction to Programming
+- **Date**: Fall 2023
+- **Instructor**: Dr. Jane Smith
+
+## Objectives
+1. Implement the Fibonacci sequence algorithm in Python
+2. Understand recursive and iterative approaches to sequence generation
+3. Visualize numerical data using matplotlib
+4. Practice proper code documentation and commenting
+
+## Background
+The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. It appears in many areas of mathematics and science, from the arrangement of leaves on a stem to the spiral of shells.
+
+## Exercise 1: Fibonacci Implementation
+Write a Python function that generates the Fibonacci sequence up to the nth term. Your implementation should:
+- Handle edge cases (n ≤ 0, n = 1, n = 2)
+- Use an efficient iterative approach
+- Include proper documentation with function parameters and return values
+
+## Exercise 2: Sequence Visualization
+Create a function that visualizes the Fibonacci sequence using matplotlib. Your visualization should:
+- Plot the sequence values against their indices
+- Include appropriate labels and a title
+- Use different visualization methods (e.g., line plot, bar chart)
+- Format the plot for readability
+
+## Submission Requirements
+- Submit a single Python file containing your implementation
+- Ensure your code runs without errors
+- Include comments explaining your approach
+- Attach screenshots of the generated visualizations
+
+## Grading Criteria
+- Correctness of implementation (40%)
+- Quality of visualization (30%)
+- Code style and documentation (20%)
+- Handling of edge cases (10%)

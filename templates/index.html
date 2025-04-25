@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Lilet el Deadline{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="card-title animate__animated animate__fadeIn">Générer un Rapport de TP</h2>
+                <p class="mb-0 animate__animated animate__fadeIn animate__delay-1s">🕒 N'attendez pas jusqu'à la dernière minute !</p>
+            </div>
+            <div class="card-body">
+                <div class="tunisian-quote mb-3 animate__animated animate__fadeIn animate__delay-2s">
+                    <blockquote class="blockquote">
+                        <p><em>"Kol chay yeta3mel fi lilet el deadline"</em></p>
+                        <footer class="blockquote-footer">Tous les étudiants tunisiens</footer>
+                    </blockquote>
+                </div>
+                <p class="lead">Téléchargez votre fichier d'instructions de TP et vos fichiers de code pour générer un rapport complet.</p>
+
+                <form action="{{ url_for('upload_files') }}" method="post" enctype="multipart/form-data" id="upload-form">
+                    <div class="mb-3">
+                        <label for="instruction_file" class="form-label">Fichier d'Instructions de TP (PDF ou Image)</label>
+                        <input class="form-control" type="file" id="instruction_file" name="instruction_file" accept=".pdf,.png,.jpg,.jpeg" required>
+                        <div class="form-text">Téléchargez vos instructions de TP sous forme de fichier PDF ou d'image.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="code_files" class="form-label">Fichiers de Code (.py, .java, .c, .ipynb)</label>
+                        <input class="form-control" type="file" id="code_files" name="code_files" accept=".py,.java,.c,.ipynb" multiple required>
+                        <div class="form-text">Téléchargez un ou plusieurs fichiers de code à analyser et à inclure dans le rapport.</div>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="execute_python" name="execute_python" checked>
+                        <label class="form-check-label" for="execute_python">Exécuter le code Python et inclure la sortie (fichiers Python uniquement)</label>
+                    </div>
+
+                    <div class="progress mb-3 d-none" id="progress-container">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary animate__animated animate__pulse animate__infinite" id="submit-btn">
+                            <span class="submit-icon">⏰</span> Générer le Rapport Avant la Date Limite !
+                        </button>
+                    </div>
+                    <div class="text-center mt-3 animate__animated animate__fadeIn animate__delay-3s">
+                        <small class="text-muted">Yallah, ma tfalatch el wa9t! (Dépêchez-vous, ne perdez pas de temps !)</small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.getElementById('upload-form').addEventListener('submit', function(e) {
+        // Show progress bar
+        const progressContainer = document.getElementById('progress-container');
+        const progressBar = progressContainer.querySelector('.progress-bar');
+        const submitBtn = document.getElementById('submit-btn');
+
+        progressContainer.classList.remove('d-none');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Génération du Rapport...';
+
+        // Simulate progress (in a real app, you'd use AJAX to get actual progress)
+        let progress = 0;
+        const interval = setInterval(function() {
+            progress += 5;
+            if (progress > 95) {
+                clearInterval(interval);
+            }
+            progressBar.style.width = progress + '%';
+            progressBar.setAttribute('aria-valuenow', progress);
+        }, 1000);
+    });
+</script>
+{% endblock %}

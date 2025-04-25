@@ -1,0 +1,201 @@
+/* Custom styles for Lilet El Deadline - Tunisian Student Theme */
+
+body {
+    font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e30b1c' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Tunisia flag colors */
+:root {
+    --tunisia-red: #e30b1c;
+    --tunisia-white: #ffffff;
+}
+
+/* Tunisia flag in navbar */
+.tunisia-flag {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    background-color: var(--tunisia-red);
+    position: relative;
+    border-radius: 2px;
+}
+
+.tunisia-flag::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--tunisia-white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--tunisia-red);
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--tunisia-red) !important;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    border-bottom: none;
+    background-color: var(--tunisia-red) !important;
+}
+
+.btn-primary {
+    background-color: var(--tunisia-red);
+    border-color: var(--tunisia-red);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #c00a18;
+    border-color: #c00a18;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+    border-color: var(--tunisia-red);
+    box-shadow: 0 0 0 0.25rem rgba(227, 11, 28, 0.25);
+}
+
+/* Tunisian quote styling */
+.tunisian-quote {
+    background-color: rgba(227, 11, 28, 0.05);
+    border-left: 4px solid var(--tunisia-red);
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 20px;
+}
+
+.tunisian-quote blockquote {
+    margin-bottom: 0;
+}
+
+.tunisian-quote p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Submit button icon */
+.submit-icon {
+    display: inline-block;
+    margin-right: 5px;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: var(--tunisia-red) !important;
+}
+
+.footer {
+    border-top: 1px solid #e9ecef;
+    background-color: #f8f9fa !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--tunisia-red) 25%, transparent 25%, transparent 50%, var(--tunisia-red) 50%, var(--tunisia-red) 75%, transparent 75%);
+    background-size: 20px 20px;
+    animation: footer-stripe 10s linear infinite;
+}
+
+@keyframes footer-stripe {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 20px; }
+}
+
+/* Animation for the progress bar */
+@keyframes progress-bar-stripes {
+    0% { background-position-x: 1rem; }
+}
+
+/* File input highlight effect */
+.form-control[type="file"].highlight {
+    border-color: var(--tunisia-red);
+    background-color: rgba(227, 11, 28, 0.05);
+}
+
+/* Deadline countdown animation */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Deadline countdown styling */
+.deadline-countdown {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.deadline-icon {
+    display: inline-block;
+    margin-right: 5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Add some Tunisian-inspired patterns */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L30 60 0 30z' fill='%23e30b1c' fill-opacity='0.1'/%3E%3C/svg%3E");
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .col-md-8.offset-md-2 {
+        padding: 0 15px;
+    }
+}
